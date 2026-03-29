@@ -1,4 +1,4 @@
-# Medor – sledování kurzu Bitcoinu (BTC/EUR → BTC/CZK)
+# Medor Testovací úkol – sledování kurzu Bitcoinu (BTC/EUR → BTC/CZK)
 
 ## Stručný popis projektu
 
