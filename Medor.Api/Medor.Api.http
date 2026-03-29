@@ -1,0 +1,41 @@
+@Medor.Api_HostAddress = http://localhost:5298
+
+### Live BTC/EUR + BTC/CZK (CoinDesk + ČNB)
+GET {{Medor.Api_HostAddress}}/api/LivePrice
+Accept: application/json
+
+### Uložené záznamy
+GET {{Medor.Api_HostAddress}}/api/SavedPrices
+Accept: application/json
+
+### Grafové body (uložená data)
+GET {{Medor.Api_HostAddress}}/api/SavedPrices/chart
+Accept: application/json
+
+### Uložit aktuální tick (vyžaduje poznámku)
+POST {{Medor.Api_HostAddress}}/api/SavedPrices
+Content-Type: application/json
+
+{
+  "note": "Test z Postmanu"
+}
+
+### Hromadná úprava poznámek
+PUT {{Medor.Api_HostAddress}}/api/SavedPrices/notes
+Content-Type: application/json
+
+{
+  "items": [
+    { "id": 1, "note": "Upravená poznámka" }
+  ]
+}
+
+### Smazat podle Id
+DELETE {{Medor.Api_HostAddress}}/api/SavedPrices
+Content-Type: application/json
+
+{
+  "ids": [ 1, 2 ]
+}
+
+###

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medor.Api", "Medor.Api\Medor.Api.csproj", "{8BA58C2A-8748-4CC2-98CC-5435BFD368E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medor.Web", "Medor.Web\Medor.Web.csproj", "{34DDCC9F-DA25-47B6-A19E-60731BDA8EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medor.Api.Tests", "Medor.Api.Tests\Medor.Api.Tests.csproj", "{158232F2-CB16-4DF4-861B-1935535112B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BA58C2A-8748-4CC2-98CC-5435BFD368E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA58C2A-8748-4CC2-98CC-5435BFD368E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA58C2A-8748-4CC2-98CC-5435BFD368E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA58C2A-8748-4CC2-98CC-5435BFD368E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DDCC9F-DA25-47B6-A19E-60731BDA8EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DDCC9F-DA25-47B6-A19E-60731BDA8EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DDCC9F-DA25-47B6-A19E-60731BDA8EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DDCC9F-DA25-47B6-A19E-60731BDA8EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158232F2-CB16-4DF4-861B-1935535112B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158232F2-CB16-4DF4-861B-1935535112B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158232F2-CB16-4DF4-861B-1935535112B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158232F2-CB16-4DF4-861B-1935535112B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,71 @@
+@page "/live"
+@model LiveModel
+@{
+    ViewData["Title"] = "Live data";
+}
+
+<div class="row g-4">
+    <div class="col-lg-9">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="h5 card-title">Vývoj ceny (živě, poslední vzorky)</h3>
+                <canvas id="live-chart" height="220"></canvas>
+                <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="btn-reset" title="Smaže uložené údaje v prohlížeči a zobrazí jen poslední bod">Nový graf</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="h4 card-title mb-3">Aktuální kurz (BTC/EUR → BTC/CZK)</h2>
+                <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-3">
+                    <p class="text-muted small mb-0">Data z CoinDesk a kurz EUR/CZK z ČNB. Tabulka drží historii načtených vzorků (až 40), nejnovější nahoře; šipka srovnává BTC/CZK s řádkem pod ním (starším vzorkem). Obnovuje se každých 30 s. Zaškrtněte řádky k uložení do databáze a použijte Uložit data se společnou poznámkou.</p>
+                    <div class="live-countdown flex-shrink-0" role="img" aria-label="Odpočet do dalšího obnovení dat">
+                        <svg class="live-countdown-svg" width="40" height="40" viewBox="0 0 36 36" aria-hidden="true">
+                            <g transform="rotate(-90 18 18)">
+                                <circle class="live-countdown-track" cx="18" cy="18" r="14" fill="none" />
+                                <circle id="live-countdown-progress" class="live-countdown-arc" cx="18" cy="18" r="14" fill="none" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle mb-0 text-nowrap" id="live-table">
+                        <thead>
+                            <tr>
+                                <th class="live-table-chk-col" scope="col">
+                                    <input type="checkbox" id="live-chk-all" title="Vybrat vše k uložení" aria-label="Vybrat vše k uložení" />
+                                </th>
+                                <th class="live-arrow-col" scope="col"><span class="visually-hidden">Změna BTC/CZK oproti staršímu vzorku</span></th>
+                                <th>BTC/EUR</th>
+                                <th>EUR/CZK (ČNB)</th>
+                                <th>BTC/CZK</th>
+                                <th>ČNB platnost</th>
+                                <th>Čas (UTC)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="7" class="text-muted" id="live-status">Načítám…</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4">
+                    <label for="save-note" class="form-label">Poznámka k uložení</label>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <input type="text" class="form-control" id="save-note" maxlength="500" placeholder="Povinné před uložením záznamu" />
+                        <button type="button" class="btn btn-primary text-nowrap" id="btn-save">Uložit data</button>
+                    </div>
+                    <span class="ms-2 text-danger" id="save-error" style="display:none;"></span>
+                    <span class="ms-2 text-success" id="save-ok" style="display:none;">Uloženo.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script type="module" src="~/js/medor/live-page.js" asp-append-version="true"></script>
+}

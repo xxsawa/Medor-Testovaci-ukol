@@ -1,0 +1,53 @@
+## .NET
+bin/
+obj/
+out/
+[Bb]uild[Ll]og.*
+*.user
+*.userosscache
+*.suo
+*.cache
+project.lock.json
+artifacts/
+
+## Local tooling
+*.DotSettings.user
+
+## Debug session logs (local)
+debug-2e931b.log
+**/debug-*.log
+
+## Secrets and local env (never commit)
+.env
+.env.local
+.env.*.local
+*.pfx
+**/appsettings.*.local.json
+**/secrets.json
+
+## Rider / VS / VS Code
+.idea/
+.vs/
+*.rsuser
+.vscode/*
+!.vscode/extensions.json
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## Node / Playwright (e2e)
+e2e/node_modules/
+e2e/playwright-report/
+e2e/test-results/
+
+## Test / coverage
+TestResults/
+coverage*.json
+coverage*.xml
+*.trx
+
+## NuGet
+*.nupkg
+.cursor
